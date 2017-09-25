@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="listOfPublications">
+<head>
+    <meta charset="UTF-8">
+    <title>Profile setup</title>
+    <link href="Style/style-profile-setup.css" rel="stylesheet" type="text/css">
+    <link href="https://rawgit.com/alexk111/ngImgCrop/master/compile/unminified/ng-img-crop.css">
+    <link href="Library/bootstrap.css" rel="stylesheet">
+    <link href="Library/bootstrap-theme.css" rel="stylesheet">
+    <script src="Library/angular.min.js"></script>
+    <script src="app.js"></script>
+    <script src="Library/ng-file-upload-shim.min.js"></script>
+    <script src="Library/ng-file-upload.min.js"></script>
+    <script src="Library/ng-file-upload-all.min.js"></script>
+    <script src="https://rawgit.com/alexk111/ngImgCrop/master/compile/unminified/ng-img-crop.js"></script>
+</head>
+<body ng-controller="listOfPublicationsCtrl">
+<div class="row">
+    <div class="col-md-12 head-block-for-add-information-user" >
+        <h1 class="mainTitle">Editing a profile</h1>
+    </div>
+    <div class="col-md-10">
+        <div class="col-md-3 inscription-for-add-information-user">
+            <span>Alias:</span>
+            <br/>
+            <span>City:</span>
+            <br/>
+            <span>Country:</span>
+        </div>
+        <div class="col-md-6 edit-fields-for-user">
+        <label>
+            <input type="text" ng-model="contact.nameUser" maxlength="48"/>
+        </label>
+            <br />
+            <label>
+                <input type="text" ng-model="contact.city" pattern="[A-Za-z]"/>
+            </label>
+            <br />
+            <label>
+                <select style="width: 193px" ng-model="contact.country">
+                    <option>Belarus</option>
+                    <option>Russia</option>
+                    <option>France</option>
+                    <option>Germany</option>
+                    <option>Dominican Republic</option>
+                </select>
+            </label>
+            <a href="index.html"><button ng-click="edit()" class="btn btn-warning button-change-information-for-user">Edit</button></a>
+        </div>
+    </div>
+</div>
+</body>
+</html>

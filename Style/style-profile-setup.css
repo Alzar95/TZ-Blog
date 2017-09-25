@@ -1,0 +1,58 @@
+body {
+    background-image: url("../Images/main_bacground.jpg")
+}
+
+.head-block-for-add-information-user {
+    text-align: center;
+    height:130px;
+}
+
+.inscription-for-add-information-user {
+    position: absolute;
+    font-size: 23px;
+    top: -6px;
+    left: 180px;
+}
+
+.edit-fields-for-user {
+    padding-top: 0;
+    padding-bottom: 10px;
+}
+
+.field-for-add-information-user {
+    position: absolute;
+    margin-left: 123px;
+    margin-top: -20px;
+}
+
+.cropArea {
+    background: #E4E4E4;
+    width:250px;
+    height:350px;
+    margin-top: 100px;
+    margin-left: 100px;
+}
+form .progress {
+    line-height: 15px;
+}
+.progress {
+    display: inline-block;
+    width: 100px;
+    border: 3px groove #CCC;
+}
+.progress div {
+    font-size: smaller;
+    background: orange;
+    width: 0;
+}
+
+.image-for-user {
+    margin-top: 100px;
+    margin-left: 100px;
+}
+
+.button-change-information-for-user {
+    position: absolute;
+    top: 110px;
+    left: 157px;
+}

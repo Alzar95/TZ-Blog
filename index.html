@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="listOfPublications">
+<head>
+    <meta charset="UTF-8">
+    <title>TZ</title>
+    <link href="Style/Style.css" rel="stylesheet" type="text/css">
+    <link href="Library/bootstrap.css" rel="stylesheet">
+    <link href="Library/bootstrap-theme.css" rel="stylesheet">
+    <script src="Library/angular.min.js"></script>
+    <script src="app.js"></script>
+</head>
+<body ng-controller="listOfPublicationsCtrl">
+<div class="container border-container">
+    <div class="row">
+        <div class="col-md-12 head-block">
+            <h1 class="mainTitle">Blog</h1>
+        </div>
+
+            <a href="creating-a-new-record.html">
+                <button class="btn btn-primary col-md-2 head-block btn-info-add">Создать запись</button>
+            </a>
+        <a href="profile-setup.html">
+            <button class="btn btn-primary col-md-2 head-block btn-info-user">Настройки профиля</button>
+        </a>
+
+        <div class="col-md-12 content main-content">
+            <ul ng-repeat="dataEntry in data | startFrom: startingItem() | limitTo: itemsPerPage track by $index">
+                <li>
+                    <header>
+
+                            <img src="Images/Atom.jpg" width="70" height="70">
+                        <a href="profile-setup.html">
+                            <span class="user-info">{{ dataEntry.nameUser }}</span>
+                        </a>
+                        <span class="post__time">{{ dataEntry.date }}</span>
+                    </header>
+                    <h2 class="title-info">{{ dataEntry.title }}</h2>
+                    <div class="post__body post__body_crop">
+                        {{ dataEntry.mainText }}
+                    </div>
+                    <button ng-click="remove(dataEntry._id)" class="btn btn-small btn-danger btn-delete-entry">delete</button>
+                    <footer>
+                        <span>Теги: <a ng-repeat="tagArray in dataEntry.tagList">
+                            {{tagArray}}
+                        </a></span>
+                        <br />
+                        <a>Количество комментриев: {{ dataEntry.commentCounter }}</a>
+                    </footer>
+                </li>
+            </ul>
+            <div id="pagination">
+                <button class=" btn btn-primary btn-sm" ng-disable="firstPage()"
+                ng-click="pageBack()"><</button>
+                <span>Page: {{ currentPage + 1 }}</span>
+                <button class=" btn btn-primary btn-sm" ng-disable="lastPage()"
+                        ng-click="pageForward()">></button>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

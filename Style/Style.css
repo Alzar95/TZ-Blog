@@ -1,0 +1,123 @@
+body {
+    background-image: url("../Images/main_bacground.jpg")
+}
+
+.head-block{
+    height:150px;
+}
+
+.row .mainTitle {
+    position: absolute;
+    left: 47%
+}
+
+li {
+    list-style-type: none;
+}
+
+.btn-info-add {
+    width: 80px;
+    height: 41px;
+    margin-left: 54px;
+}
+
+.btn-info-user {
+    width: 80px;
+    height: 41px;
+    margin-left: 44px;
+}
+
+.main-content {
+    margin-top: 40px;
+    padding-bottom: 50px;
+}
+
+.user-info {
+    font-size: 35px;
+}
+
+.post__time {
+    font-size: 20px;
+    margin-left: 12%;
+}
+
+.btn-delete-entry {
+    display: flex;
+    float: right;
+}
+
+.title-info {
+    font-weight: 600;
+}
+
+.head-block-for-add-record {
+    height:130px;
+}
+
+.field-for-add-record {
+    position: absolute;
+    margin-left: 123px;
+    top: -8px;
+}
+
+.field-for-add-tags {
+    position: absolute;
+
+    top: 370px;
+    left: 113px;
+}
+
+.inscription-for-add-record {
+    position: absolute;
+    font-size: 33px;
+    top: -17px;
+}
+
+.content-for-add-record {
+    position: absolute;
+    font-size: 33px;
+    top: 40px;
+}
+
+.tags-for-add-record {
+    position: absolute;
+    font-size: 33px;
+    margin-top: 270px;
+}
+
+.text-for-add-record {
+    position: absolute;
+    margin-left: 123px;
+    top: 50px;
+}
+
+.button-add-information {
+    position: absolute;
+    top: 283px;
+    right: -140px;
+}
+
+.border-container {
+    background-color: #dcf7ff;
+}
+
+#pagination {
+    text-align: center;
+}
+
+
+.scroll-list-tag {
+    position: absolute;
+    width: 215px;
+    top: 279px;
+    left: 142px;
+    font-size: 25px;
+}
+
+.text-between-add-tag {
+    position: absolute;
+    top: 325px;
+    left: 230px;
+    font-size: 25px;
+    font-weight: 600;
+}

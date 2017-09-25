@@ -1,0 +1,19 @@
+{
+  "name": "TZBlog",
+  "version": "1.0.0",
+  "description": " ",
+  "main": "angular.min.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "repository": {},
+  "dependencies": {
+    "body-parser": "^1.18.1",
+    "express": "^4.15.4",
+    "mongojs": "^2.4.1"
+  }
+}

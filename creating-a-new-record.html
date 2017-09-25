@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="listOfPublications">
+<head>
+    <meta charset="UTF-8">
+    <title>Add</title>
+    <link href="Style/Style.css" rel="stylesheet" type="text/css">
+    <link href="Library/bootstrap.css" rel="stylesheet">
+    <link href="Library/bootstrap-theme.css" rel="stylesheet">
+    <script src="Library/angular.min.js"></script>
+    <script src="app.js"></script>
+</head>
+<body ng-controller="listOfPublicationsCtrl" >
+<div class="container">
+    <div class="row">
+        <div class="col-md-9 head-block-for-add-record" >
+            <h1 class="mainTitle">Creating a new record</h1>
+        </div>
+   <div class="col-md-10">
+    <span class="inscription-for-add-record">Header:</span>
+    <label>
+        <input class="form-control field-for-add-record" ng-model="contact.title"/>
+    </label>
+       <span class="content-for-add-record">Text:</span>
+       <label>
+           <textarea class="text-for-add-record" rows="10" cols="119" name="text" ng-model="contact.mainText"></textarea>
+       </label>
+       <span class="tags-for-add-record">Tags:</span>
+       <label>
+           <select class="scroll-list-tag">
+               <option value="#food">#food</option>
+               <option value="#breakfast">#breakfast</option>
+               <option value="#dessert">#dessert</option>
+               <option value="#eating">#eating</option>
+               <option value="#drink">#drink</option>
+               <option value="#coffee">#coffee</option>
+               <option value="#tea">#tea</option>
+               <option value="#work">#work</option>
+               <option value="#office">#office</option>
+               <option value="#money">#money</option>
+               <option value="#art">#art</option>
+               <option value="#music">#music</option>
+               <option value="#videos">#videos</option>
+               <option value="#books">#books</option>
+               <option value="#colors">#colors</option>
+               <option value="#city">#city</option>
+               <option value="#street">#street</option>
+               <option value="#jewelry">#jewelry</option>
+           </select>
+       </label>
+       <span class="text-between-add-tag">Or</span>
+       <label>
+           <input class="col-md-3 form-control field-for-add-tags" ng-model="contact.tagList[0]"/>
+       </label>
+       <a href="index.html"><button class="btn btn-primary button-add-information"
+               ng-click="addInformation()" >Add Information</button></a>
+   </div>
+</div>
+</div>
+</body>
+</html>
