@@ -29,11 +29,11 @@
         </div>
         <div class="col-md-6 edit-fields-for-user">
         <label>
-            <input type="text" ng-model="contact.nameUser" maxlength="48"/>
+            <input ng-model="contact.nameUser" maxlength="48"/>
         </label>
             <br />
             <label>
-                <input type="text" ng-model="contact.city" pattern="[A-Za-z]"/>
+                <input ng-model="contact.city" pattern="[A-Za-z]"/>
             </label>
             <br />
             <label>
@@ -45,7 +45,8 @@
                     <option>Dominican Republic</option>
                 </select>
             </label>
-            <a href="index.html"><button ng-click="edit()" class="btn btn-warning button-change-information-for-user">Edit</button></a>
+            <!--<button  ng-click="edit()" class="btn btn-primary col-md-2 head-block btn-info-user">Edit</button>-->
+            <a ><button ng-click="update()" class="btn btn-warning button-change-information-for-user">Update</button></a>
         </div>
     </div>
 </div>

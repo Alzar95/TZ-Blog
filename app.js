@@ -53,11 +53,30 @@
             $http.post('/entry', $scope.contact);
         };
 
-
         $scope.remove = function(id) {
             console.log(id);
             $http.delete('/entry/' + id);
         };
+
+        $scope.edit = function() {
+            console.log($scope.contact);
+            $http.get('/entry');
+        };
+
+        $scope.update = function () {
+            // for(let i = 0; i < $scope.data.length; i++) {
+            //     console.log($scope.contact.nameUser);
+            //     $scope.data[i].nameUser = $scope.contact.nameUser;
+            //     $scope.data[i].city = $scope.contact.city;
+            //     $scope.data[i].country = $scope.contact.country;
+            // }
+
+            console.log($scope.contact);
+            $http.put('/entry', $scope.contact);
+        };
+
+
+
 
         $scope.currentPage = 0;
         $scope.itemsPerPage = 5;
