@@ -3,34 +3,49 @@
 <head>
     <meta charset="UTF-8">
     <title>Add</title>
-    <link href="Style/Style.css" rel="stylesheet" type="text/css">
-    <link href="Library/bootstrap.css" rel="stylesheet">
-    <link href="Library/bootstrap-theme.css" rel="stylesheet">
-
-    <script src="Library/angular.min.js"></script>
-
-    <script src="app.js"></script>
-
-
+    <link href="../Style/Style.css" rel="stylesheet" type="text/css">
+    <link href="../Library/bootstrap.css" rel="stylesheet">
+    <link href="../Library/bootstrap-theme.css" rel="stylesheet">
+    <script src="../Library/angular.min.js"></script>
+    <script src="../Script/app.js"></script>
 </head>
-<body ng-controller="listOfPublicationsCtrl" >
+<body ng-controller="listOfPublicationsCtrl">
 <div class="container">
     <div class="row">
-        <div class="col-md-9 head-block-for-add-record" >
+        <div class="col-md-12 head-block-for-add-record">
             <h1 class="mainTitle">Creating a new record</h1>
         </div>
-   <div class="col-md-10">
+
+        <div class="col-md-12">
+        <div class="col-md-2">
     <span class="inscription-for-add-record">Header:</span>
+        </div>
+
+        <div class="col-md-10">
     <label>
-        <input class="form-control field-for-add-record" ng-model="contact.title"/>
+        <input class="field-for-add-record" ng-model="contact.title"/>
     </label>
+        </div>
+        </div>
+
+        <div class="col-md-12">
+        <div class="col-md-3">
        <span class="content-for-add-record">Text:</span>
+        </div>
+        <div class="col-md-9">
        <label>
            <textarea class="text-for-add-record" rows="10" cols="119" name="text" ng-model="contact.mainText"></textarea>
        </label>
+        </div>
+        </div>
+
+        <div class="col-md-12">
+        <div class="col-md-2">
        <span class="tags-for-add-record">Tags:</span>
+        </div>
+        <div class="col-md-4">
        <label>
-           <select class="scroll-list-tag">
+           <select class="scroll-list-tag" ng-model="contact.tagList[0]">
                <option value="#food">#food</option>
                <option value="#breakfast">#breakfast</option>
                <option value="#dessert">#dessert</option>
@@ -51,15 +66,21 @@
                <option value="#jewelry">#jewelry</option>
            </select>
        </label>
-       <br>
+        </div>
+            <div class="col-md-2">
        <span class="text-between-add-tag">Or</span>
+            </div>
+            <div class="col-md-4">
        <label>
-           <input class="col-md-3 form-control field-for-add-tags" ng-model="contact.tagList[0]"/>
+           <input class="field-for-add-tags" ng-model="contact.tagList[1]"/>
        </label>
-       <a href="index.html"><button class="btn btn-primary button-add-information"
-               ng-click="addInformation()" >Add Information</button></a>
-   </div>
+            </div>
+        </div>
 
+        <div class="col-md-12">
+       <a href="../index.html"><button class="btn btn-primary button-add-information"
+                                       ng-click="addInformation()" >Add Information</button></a>
+        </div>
 </div>
 </div>
 </body>

@@ -4,10 +4,14 @@
     <meta charset="UTF-8">
     <title>TZ</title>
     <link href="Style/Style.css" rel="stylesheet" type="text/css">
+    <link href="Style/style-profile-setup.css" rel="stylesheet" type="text/css">
     <link href="Library/bootstrap.css" rel="stylesheet">
     <link href="Library/bootstrap-theme.css" rel="stylesheet">
+    <!--<link href="View/creating-a-new-record.html">-->
+    <!--<link href="View/profile-setup.html">-->
+    <!--<link href="View/edit-entry.html">-->
     <script src="Library/angular.min.js"></script>
-    <script src="app.js"></script>
+    <script src="Script/app.js"></script>
 </head>
 <body ng-controller="listOfPublicationsCtrl">
 <div class="container border-container">
@@ -16,47 +20,54 @@
             <h1 class="mainTitle">Blog</h1>
         </div>
 
-            <a href="creating-a-new-record.html">
-                <button class="btn btn-primary col-md-2 head-block btn-info-add">Создать запись</button>
-            </a>
-        <a  href="profile-setup.html">
-            <button ng-click="edit()" class="btn btn-primary col-md-2 head-block btn-info-user">Настройки профиля</button>
+        <a href="View/creating-a-new-record.html">
+            <button class="btn btn-primary col-md-2 head-block btn-info-add">Создать запись</button>
+        </a>
+        <a href="View/profile-setup.html">
+            <button class="btn btn-primary col-md-2 head-block btn-info-user">Настройки профиля </button>
         </a>
 
-        <div class="col-md-12 content main-content">
-            <ul ng-repeat="dataEntry in data | startFrom: startingItem() | limitTo: itemsPerPage track by $index">
-                <li>
-                    <header>
 
-                            <img src="Images/Atom.jpg" width="70" height="70">
-                        <a href="profile-setup.html">
-                            <span class="user-info">{{ dataEntry.nameUser }}</span>
-                        </a>
-                        <span class="post__time">{{ dataEntry.date }}</span>
-                    </header>
+
+        <h2 class="name-for-title-field-tags">Filtering tags:</h2>
+        <label>
+            <input class="field-for-filtration-tags" ng-model="filteringTags">
+        </label>
+
+
+        <div class="col-md-12 content main-content">
+
+            <ul ng-repeat="dataEntry in data | filter: {tagList: filteringTags} | startFrom: startingItem() | limitTo: itemsPerPage track by $index">
+                <li>
+                    <img src="Images/Atom.jpg" width="70" height="70">
+                    <a href="View/profile-setup.html">
+                        <span class="user-info">{{ dataEntry.nameUser }}</span>
+                    </a>
+                    <span class="post__time">{{ dataEntry.date }}</span>
                     <h2 class="title-info">{{ dataEntry.title }}</h2>
-                    <div class="post__body post__body_crop">
-                        {{ dataEntry.mainText }}
-                    </div>
-                    <button ng-click="remove(dataEntry._id)" class="btn btn-small btn-danger btn-delete-entry">delete</button>
-                    <footer>
-                        <span>Теги: <a ng-repeat="tagArray in dataEntry.tagList">
-                            {{tagArray}}
-                        </a></span>
-                        <br />
-                        <a>Количество комментриев: {{ dataEntry.commentCounter }}</a>
-                    </footer>
+                    <div class="post__body post__body_crop">{{ dataEntry.mainText }}</div>
+
+                    <button ng-click="remove(dataEntry._id)" class="btn btn-small btn-danger btn-delete-entry">Delete
+                    </button>
+                    <a href="View/edit-entry.html">
+                    <button class="btn btn-small btn-warning btn-edit-entry">Edit
+                    </button>
+                    </a>
+                    <span>Теги:
+                            <a ng-repeat="tagArray in dataEntry.tagList  ">
+                                {{tagArray}}</a>
+                        </span>
+                    <br/>
+                    <a>Количество комментриев: {{ dataEntry.commentCounter }}</a>
                 </li>
             </ul>
+            </div>
             <div id="pagination">
-                <button class=" btn btn-primary btn-sm" ng-disable="firstPage()"
-                ng-click="pageBack()"><</button>
+                <button class=" btn btn-primary btn-sm" ng-disable="firstPage()" ng-click="pageBack()"><</button>
                 <span>Page: {{ currentPage + 1 }}</span>
-                <button class=" btn btn-primary btn-sm" ng-disable="lastPage()"
-                        ng-click="pageForward()">></button>
+                <button class=" btn btn-primary btn-sm checkbox-right-for-input" ng-disable="lastPage()" ng-click="pageForward()">></button>
             </div>
         </div>
     </div>
-</div>
 </body>
 </html>

@@ -1,13 +1,11 @@
-(function () {
-    'use strict';
-
     const listOfPublications = angular.module('listOfPublications', []);
     listOfPublications.filter('startFrom', function () {
        return function (input, start) {
            start = +start;
            return input.slice(start);
-       } 
+       }
     });
+
     listOfPublications.controller('listOfPublicationsCtrl', function ($scope, $http) {
         $http({
             method: 'GET',
@@ -64,12 +62,12 @@
         };
 
         $scope.update = function () {
-            // for(let i = 0; i < $scope.data.length; i++) {
-            //     console.log($scope.contact.nameUser);
-            //     $scope.data[i].nameUser = $scope.contact.nameUser;
-            //     $scope.data[i].city = $scope.contact.city;
-            //     $scope.data[i].country = $scope.contact.country;
-            // }
+            for(let i = 0; i < $scope.data.length; i++) {
+                console.log($scope.contact.nameUser);
+                $scope.data[i].nameUser = $scope.contact.nameUser;
+                $scope.data[i].city = $scope.contact.city;
+                $scope.data[i].country = $scope.contact.country;
+            }
 
             console.log($scope.contact);
             $http.put('/entry', $scope.contact);
@@ -111,5 +109,4 @@
             $scope.currentPage = $scope.currentPage + 1;
         };
     });
-})();
 
